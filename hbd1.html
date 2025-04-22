@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Khushi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffe6f0, #ffe6f7);
+      font-family: 'Open Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      color: #ff69b4;
+      text-align: center;
+      margin-top: 60px;
+      text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ff69b4;
+      animation: glitter 2s infinite alternate, fadeIn 2s ease-in-out;
+    }
+
+    @keyframes glitter {
+      0% {
+        text-shadow: 0 0 10px #ffb6c1, 0 0 20px #ff69b4;
+      }
+      100% {
+        text-shadow: 0 0 20px #ffb6c1, 0 0 30px #ff1493;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .message {
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.3em;
+      color: #444;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .music {
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      background: pink;
+      position: absolute;
+      top: -30px;
+      animation: floatHeart 6s linear infinite;
+      opacity: 0.6;
+      transform: rotate(45deg);
+      border-radius: 50% 50% 0 0;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(405deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts">
+    <!-- Generate hearts with JS -->
+  </div>
+
+  <h1>Happy Birthday Khushi 🎉</h1>
+  <div class="message">
+    <p>To the girl who lights up my world with her smile and fills my heart with endless love — Happy Birthday, Khushi. 💖</p>
+    <p>On this special day, I just want you to know how incredibly lucky I am to have you in my life. You’re beautiful, kind, and absolutely unforgettable. Here's to more laughs, more love, and endless memories with you. 🥰</p>
+    <p>With all my heart,<br>Your biggest fan 💌</p>
+  </div>
+
+   <audio controls autoplay loop>
+    <source src="https://files.catbox.moe/8q14f8.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
+
+
+  <script>
+    // Generate floating hearts
+    const hearts = document.querySelector('.hearts');
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      hearts.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
